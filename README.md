@@ -63,9 +63,11 @@ Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
 
 * Este projeto foi um aprendizado muito bom, coloquei em prática o que já sabia e aprendi o que não sabia. Muito bom!!
 
-## Bugs
+## Observação
 
 * O projeto ficou com alguns bugs por causa que eu nao consegui usar SVG, tentei de muitos jeitos, importando varias libs externas, porém não consegui
 * usei PNG,  para ser mais fácil de dar trocar para SVGPicture
 * Foquei em entregar com as funcionalidades, por causa que não consegui importar os icones, porém isso é fácil de dar manuntençãi
+* Alguns icones eu não consegui importar para o app, mas é algo que é simples de se resolver e dar manuntenção
+
 ---
