@@ -1,16 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fruithub/abstract/colors_app.dart';
 import 'package:fruithub/components/item_cards.dart';
 import 'package:fruithub/screens/orderComplete_screen/orderComplete_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-import 'dart:async';
-import 'dart:convert';
-import 'dart:io';
 import '../../components/mont_Elevated_Button.dart';
-import 'package:path_provider/path_provider.dart';
 
 class OrderList extends StatefulWidget {
   @override
@@ -18,7 +11,6 @@ class OrderList extends StatefulWidget {
 }
 
 class _HomeState extends State<OrderList> {
-  final _toDoController = TextEditingController();
   var soma = 0.0;
   var diminuir = 0.0;
 
@@ -70,6 +62,14 @@ class _HomeState extends State<OrderList> {
     );
   }
 
+
+  /*
+*
+*
+*      Criando Widgets da page
+*
+*
+ */
   Widget buildItem(BuildContext context) {
     return Column(
       children: [

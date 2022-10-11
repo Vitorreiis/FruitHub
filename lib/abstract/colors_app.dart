@@ -1,3 +1,11 @@
+/*
+*
+*
+*      Criando consts que são chamadas no app
+*
+*
+ */
+
 import 'package:flutter/cupertino.dart';
 
 class ColorsApp {

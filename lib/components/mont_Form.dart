@@ -1,4 +1,11 @@
-import 'dart:math';
+/*
+*
+*
+*      Criando molde para o TextFormField que será chamado em varias páginas
+*
+*
+ */
+
 
 import 'package:fruithub/abstract/colors_app.dart';
 import 'package:flutter/material.dart';

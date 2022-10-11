@@ -1,3 +1,11 @@
+/*
+*
+*
+*      Criando molde para o elevatedButton que será chamado em varias páginas
+*
+*
+ */
+
 import 'package:fruithub/abstract/colors_app.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

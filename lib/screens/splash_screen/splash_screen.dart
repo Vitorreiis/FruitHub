@@ -1,5 +1,12 @@
+/*
+*
+*
+*      Criando page Splash Screen
+*
+*
+ */
+
 import 'package:flutter/material.dart';
-import 'package:fruithub/screens/welcome_screen/welcome_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);

@@ -1,3 +1,12 @@
+/*
+*
+*
+*      Criando Widget que recebe uma lista de String e chama ListViewCategories
+*
+*
+ */
+
+
 import 'package:flutter/material.dart';
 
 import 'build_category.dart';

@@ -1,3 +1,11 @@
+/*
+*
+*
+*      Criando Widgets ContainerCategoriesPopular para ser chamado nas páginas
+*
+*
+ */
+
 import 'package:flutter/material.dart';
 
 import '../abstract/colors_app.dart';

@@ -17,6 +17,8 @@ class DetailsScreen extends StatelessWidget {
       body: Body(product: product,),
     );
   }
+
+  ///Criando Widget AppBar
   AppBar buildAppBar (BuildContext context){
     return AppBar(
       backgroundColor: Colors.transparent,

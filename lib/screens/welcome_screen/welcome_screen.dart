@@ -60,7 +60,14 @@ class WelcomeScreen extends StatelessWidget {
   }
 }
 
-//Criando Widget para estilizar a imagem da página
+
+/*
+*
+*
+*      Criando Widgets da page
+*
+*
+ */
 Widget montImage(String image) {
   return Padding(
     padding: EdgeInsets.only(bottom: 34),

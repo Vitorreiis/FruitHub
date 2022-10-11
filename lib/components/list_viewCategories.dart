@@ -1,3 +1,11 @@
+/*
+*
+*
+*      Criando Widget que é um ListView onde irá carregar os cards dentro dele
+*
+*
+ */
+
 import 'package:flutter/material.dart';
 
 class ListViewCategories extends StatelessWidget {

@@ -1,3 +1,11 @@
+/*
+*
+*
+*      Criando classe para armazenar os Products
+*
+*
+ */
+
 class Product {
   final String image, title, description;
   final int id;

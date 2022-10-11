@@ -1,3 +1,11 @@
+/*
+*
+*
+*      Criando Widgets ContainerCategories para ser chamado nas páginas
+*
+*
+ */
+
 import 'package:flutter/material.dart';
 
 class ContainerCategories extends StatelessWidget {

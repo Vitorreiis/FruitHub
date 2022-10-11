@@ -1,3 +1,11 @@
+/*
+*
+*
+*      Criando Widgets ItemCart que passa os cards e é chamado na homescreen
+*
+*
+ */
+
 import 'package:fruithub/abstract/colors_app.dart';
 import 'package:fruithub/models/Product.dart';
 import 'package:flutter/material.dart';

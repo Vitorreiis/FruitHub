@@ -11,36 +11,47 @@ class OrderComplete extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Center(
-        child: Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset('assets/order_complete.png'),
-              SizedBox(height: 40,),
-              Text(
-                'Order Taken',
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.w400
-                ),
-              ),
-              SizedBox(height: 2,),
-              Text(
-                'Your order have been taken and is being attended to',
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w300
-                ),
-              ),
-              SizedBox(height: 56,),
-              MontElevatedButton('Track order', 208, 56, (){}),
-              SizedBox(height: 24,),
-              MontElevatedButton('Continue shopping', 183, 56, (){})
-            ],
-          ),
-        )
-      ),
+      body: centerHome(),
     );
   }
+}
+
+/*
+*
+*
+*      Criando Widgets da page
+*
+*
+ */
+Widget centerHome(){
+  return Center(
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset('assets/order_complete.png'),
+            SizedBox(height: 40,),
+            Text(
+              'Order Taken',
+              style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.w400
+              ),
+            ),
+            SizedBox(height: 2,),
+            Text(
+              'Your order have been taken and is being attended to',
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w300
+              ),
+            ),
+            SizedBox(height: 56,),
+            MontElevatedButton('Track order', 208, 56, (){}),
+            SizedBox(height: 24,),
+            MontElevatedButton('Continue shopping', 183, 56, (){})
+          ],
+        ),
+      ),
+  );
 }

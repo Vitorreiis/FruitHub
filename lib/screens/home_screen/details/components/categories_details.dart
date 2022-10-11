@@ -11,6 +11,8 @@ class CategoriesDetails extends StatefulWidget {
 
 class _CategoriesState extends State<CategoriesDetails> {
 
+
+  ///Criando lista de String
   List<String> categories = [
     'Red Quinoa',
     'Lime',
@@ -22,12 +24,22 @@ class _CategoriesState extends State<CategoriesDetails> {
   ];
 
 
+  ///criando uma variavél que inicia com 0
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+    ///chamando Widget ListViewCategories
     return ListViewCategories(categories, buildCategory);
   }
 
+
+  /*
+*
+*
+*      Criando Widgets da page
+*
+*
+ */
   Widget buildCategory(int index) {
     return GestureDetector(
       onTap: (){
@@ -35,6 +47,7 @@ class _CategoriesState extends State<CategoriesDetails> {
           selectedIndex = index;
         });
       },
+      ///chamando Widget ContainerCategories
       child: ContainerCategories(categories, index, selectedIndex),
     );
   }

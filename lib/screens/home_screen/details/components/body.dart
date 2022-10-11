@@ -15,16 +15,6 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    List<String> categories = [
-      'Red Quinoa',
-      'Lime',
-      'Honey',
-      'Blueberries',
-      'Mango',
-      'Strawberries',
-      'Fresh Mint',
-    ];
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
