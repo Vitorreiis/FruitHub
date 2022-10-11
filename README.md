@@ -1,6 +1,6 @@
 # Fruit Hub
 ![image](https://user-images.githubusercontent.com/81445945/194992746-73415ca0-d064-49fe-b0b3-460605a01911.png)
-![image](https://user-images.githubusercontent.com/81445945/194992793-eca1255d-d853-4e50-95db-3d0c125892ef.png)
+![image](https://user-images.githubusercontent.com/81445945/194993162-dfba5c93-c79f-4ab0-99f0-3be0eff64a90.png)
 ![image](https://user-images.githubusercontent.com/81445945/194992824-9f200217-382e-42f4-a3fe-dd4cd6f555b1.png)
 
 
