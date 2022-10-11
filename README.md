@@ -13,8 +13,6 @@ https://www.figma.com/file/Ks1vP6KpQifRKsl9FV7yRN/UI%2FInteraction-Design?node-i
 
 Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
 
-Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar o projeto.
-
 ### 📋 Pré-requisitos
 
 Fazer uma copy do projeto e inserir no seu editor de codigo
