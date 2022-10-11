@@ -67,4 +67,5 @@ Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
 
 * O projeto ficou com alguns bugs por causa que eu nao consegui usar SVG, tentei de muitos jeitos, importando varias libs externas, porém não consegui
 * usei PNG,  para ser mais fácil de dar trocar para SVGPicture
+* Foquei em entregar com as funcionalidades, por causa que não consegui importar os icones, porém isso é fácil de dar manuntençãi
 ---
