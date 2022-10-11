@@ -1,6 +1,13 @@
 # Fruit Hub
+![image](https://user-images.githubusercontent.com/81445945/194992746-73415ca0-d064-49fe-b0b3-460605a01911.png)
+![image](https://user-images.githubusercontent.com/81445945/194992793-eca1255d-d853-4e50-95db-3d0c125892ef.png)
+![image](https://user-images.githubusercontent.com/81445945/194992824-9f200217-382e-42f4-a3fe-dd4cd6f555b1.png)
+
 
 Aplicativo de vendas de produtos comestíveis
+
+#Figma
+https://www.figma.com/file/Ks1vP6KpQifRKsl9FV7yRN/UI%2FInteraction-Design?node-id=12%3A0
 
 ## 🚀 Começando
 
@@ -56,5 +63,8 @@ Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
 
 * Este projeto foi um aprendizado muito bom, coloquei em prática o que já sabia e aprendi o que não sabia. Muito bom!!
 
+## Bugs
 
+* O projeto ficou com alguns bugs por causa que eu nao consegui usar SVG, tentei de muitos jeitos, importando varias libs externas, porém não consegui
+* usei PNG,  para ser mais fácil de dar trocar para SVGPicture
 ---
