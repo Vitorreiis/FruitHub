@@ -39,25 +39,17 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 Mencione as ferramentas que você usou para criar seu projeto
 
-*   flutter_svg: 1.1.3
-*   path_provider: ^2.0.11
+*  Flutter
+*  flutter_svg: 1.1.3
+*  path_provider: ^2.0.11
 *  shared_preferences: ^2.0.15
 
-## 🖇️ Colaborando
-
-Por favor, leia o [COLABORACAO.md](https://gist.github.com/usuario/linkParaInfoSobreContribuicoes) para obter detalhes sobre o nosso código de conduta e o processo para nos enviar pedidos de solicitação.
-
-## 📌 Versão
-
-Nós usamos [SemVer](http://semver.org/) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](https://github.com/suas/tags/do/projeto). 
 
 ## ✒️ Autores
 
 Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
 
 * **Vitor Reis** - [Vitor Reis](https://github.com/Vitorreiis)
-
-## 📄 Licença
 
 ## 🎁 Expressões de gratidão
 
