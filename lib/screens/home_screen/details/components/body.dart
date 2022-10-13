@@ -4,33 +4,40 @@ import 'package:fruithub/components/mont_Elevated_Button.dart';
 import 'package:fruithub/models/Product.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import 'categories_details.dart';
 
-class Body extends StatelessWidget {
-  final Product product;
+class Body extends StatefulWidget {
+   final Product product;
 
-  Body({required this.product});
+  const Body({super.key, required this.product});
+
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+
 
   @override
   Widget build(BuildContext context) {
+
+    double soma = 0;
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Expanded(
           child: Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30))),
-            child: Container(
-              height: 200,
-              width: 200,
-              child: Image.asset(product.image),
-            )
-    // Image.asset('assets/product2.svg'),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30))),
+              child: Container(
+                height: 200,
+                width: 200,
+                child: Image.asset(widget.product.image),
+              )
           ),
         ),
         Container(
@@ -44,27 +51,12 @@ class Body extends StatelessWidget {
             children: [
               Padding(
                 padding: EdgeInsets.only(left: 24, top: 24, bottom: 24),
-                child: Text(product.title, style: TextStyle(
+                child: Text(widget.product.title, style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w500,
                 ), ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  rowQuantidade(),
-                  Padding(
-                    padding: EdgeInsets.only(right: 24),
-                    child: Text(
-                      'Valor total',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  )
-                ],
-              ),
+                  RowQuant(product: widget.product,),
               Padding(
                 padding: EdgeInsets.only(left: 24, top: 36),
                 child: Text(
@@ -116,164 +108,104 @@ class Body extends StatelessWidget {
         ),
       ],
     );
-    //         child: Column(
-//           children: [
-//             Container(
-// color: Colors.yellow,
-//             ),
-//             // SizedBox(
-//             //   height: size.height,
-//             // child: Stack(
-//             //   children: [
-//             //     Container(
-//             //       margin: EdgeInsets.only(top: size.height * 0.3),
-//             //       // height: 500,
-//             //       decoration: BoxDecoration(
-//             //         color: Colors.white,
-//             //         borderRadius: BorderRadius.only(
-//             //           topLeft: Radius.circular(30),
-//             //           topRight: Radius.circular(30)
-//             //         )
-//             //       ),
-//                   child: Column(
-//                     crossAxisAlignment: CrossAxisAlignment.start,
-//                     children: [
-//                       Padding(
-//                         padding: EdgeInsets.only(left: 24, top: 24, bottom: 24),
-//                       child: Text(product.title, style: TextStyle(
-//                         fontSize: 24,
-//                         fontWeight: FontWeight.w500,
-//                       ), ),
-//                           ),
-//                       Row(
-//                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                         children: [
-//                           rowQuantidade(),
-//                           Padding(
-//                             padding: EdgeInsets.only(right: 24),
-//                             child: Text(
-//                               'Valor total',
-//                               style: TextStyle(
-//                                 fontSize: 24,
-//                                 fontWeight: FontWeight.w500,
-//                               ),
-//                             ),
-//                           )
-//                         ],
-//                       ),
-//                       Padding(
-//                         padding: EdgeInsets.only(left: 24, top: 36),
-//                         child: Text(
-//                           'This combo contains:',
-//                           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
-//                         ),
-//                       ),
-//                       Container(
-//                         margin: EdgeInsets.only(left: 24, bottom: 16),
-//                         height: 3,
-//                         width: 60,
-//                         color: ColorsApp().colorValorProduct,
-//                       ),
-//                       CategoriesDetails(),
-//                       Padding(padding: EdgeInsets.only(left: 24, top: 34),
-//                       child: Text(
-//                         'If you are looking for a new fruit salad to eat '
-//                             'today, quinoa is the perfect brunch for you. make',
-//                         style: TextStyle(
-//                             fontSize: 14,
-//                             fontWeight: FontWeight.w300
-//                         ),
-//                       ),),
-//                       SizedBox(height: 60,),
-//                       Row(
-//                         crossAxisAlignment: CrossAxisAlignment.end,
-//                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                         children: [
-//                           Padding(
-//                             padding: EdgeInsets.only(left: 24),
-//                             child: Container(
-//                               decoration: BoxDecoration(
-//                                 color: ColorsApp().colorBackCurtida,
-//                                 shape: BoxShape.circle
-//                               ),
-//                               child: IconButton(onPressed: (){},
-//                                 icon: Icon(Icons.add),
-//                               ),
-//                             )
-//                           ),
-//                           Padding(
-//                             padding: EdgeInsets.only(right: 24),
-//                             child: MontElevatedButton('Add To Basket', 219, 56, (){}),
-//                           ),
-//                         ],
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//                 Image.asset('assets/product1.png')
-//               ],
-//             ),
-//             )
-//           ],
-//         ));
   }
 }
+class RowQuant extends StatefulWidget {
+  Product product;
 
-Widget rowQuantidade() {
-  return Row(
-    children: [
-      Container(
-        margin: EdgeInsets.only(left: 24),
-        width: 40,
-        height: 40,
-        child: IconButton(onPressed: () {}, icon: Icon(Icons.remove)),
-        decoration: BoxDecoration(
-          color: ColorsApp().colorBackaAdicionarRemover,
-          shape: BoxShape.circle,
-        ),
-      ),
-      SizedBox(
-        width: 24,
-      ),
-      Text('num'),
-      SizedBox(
-        width: 24,
-      ),
-      Container(
-        width: 40,
-        height: 40,
-        child: IconButton(onPressed: () {}, icon: Icon(Icons.add)),
-        decoration: BoxDecoration(
-          color: ColorsApp().colorBackaAdicionarRemover,
-          shape: BoxShape.circle,
-        ),
-      ),
-    ],
-  );
+  RowQuant({required this.product});
+
+  @override
+  _RowQuantState createState() => _RowQuantState();
 }
 
-Widget containerCategoryDetails(String text) {
-  return Container(
-    alignment: Alignment.center,
-    margin: EdgeInsets.only(right: 12, bottom: 3, top: 3),
-    padding: EdgeInsets.fromLTRB(16, 8, 16, 8),
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(15),
-      color: Colors.white,
-      border: null,
-      boxShadow: [
-        BoxShadow(
-          color: Colors.grey.withOpacity(0.5),
-          spreadRadius: 0,
-          blurRadius: 2,
-          offset: Offset(1, 1),
+class _RowQuantState extends State<RowQuant> {
+  @override
+  int quantidade = 1;
+  double total = 0;
+
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          margin: EdgeInsets.only(left: 24),
+          width: 40,
+          height: 40,
+          child: IconButton(onPressed: () {
+            setState(() {
+              total -= widget.product.price;
+              quantidade--;
+            });
+          }, icon: Icon(Icons.remove)),
+          decoration: BoxDecoration(
+            color: ColorsApp().colorBackaAdicionarRemover,
+            shape: BoxShape.circle,
+          ),
+        ),
+        SizedBox(
+          width: 24,
+        ),
+        Text(
+            '${quantidade}'
+        ),
+        SizedBox(
+          width: 24,
+        ),
+        Container(
+          width: 40,
+          height: 40,
+          child: IconButton(onPressed: () {
+            setState(() {
+              total += widget.product.price;
+              quantidade++;
+            });
+          }, icon: Icon(Icons.add)),
+          decoration: BoxDecoration(
+            color: ColorsApp().colorBackaAdicionarRemover,
+            shape: BoxShape.circle,
+          ),
+        ),
+        Spacer(),
+        Padding(
+          padding: EdgeInsets.only(right: 24),
+          child: Text(
+            '${total.toStringAsFixed(3)}',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
         ),
       ],
-    ),
-    child: Text(
-      text,
-      style: TextStyle(
-          fontSize: 14, fontWeight: FontWeight.w400, color: Color(0xFF333333)),
-    ),
-  );
+    );
+  }
+
+
+  Widget containerCategoryDetails(String text) {
+    return Container(
+      alignment: Alignment.center,
+      margin: EdgeInsets.only(right: 12, bottom: 3, top: 3),
+      padding: EdgeInsets.fromLTRB(16, 8, 16, 8),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        color: Colors.white,
+        border: null,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 0,
+            blurRadius: 2,
+            offset: Offset(1, 1),
+          ),
+        ],
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+            color: Color(0xFF333333)),
+      ),
+    );
+  }
 }

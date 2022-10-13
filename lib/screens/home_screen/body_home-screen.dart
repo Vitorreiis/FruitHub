@@ -17,19 +17,25 @@ class BodyHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
-      padding: EdgeInsets.only(top: 32),
       color: Colors.white,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Chamando Widgets criados
-          formHomeScreen(context),
-          Categories(),
-          tituloBody(),
-          listViewCards(),
-          CategoriesPopular(),
-          ListViewCardPopular(),
-        ],
+      height: MediaQuery.of(context).size.height,
+      child: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.only(top: 32),
+          color: Colors.white,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Chamando Widgets criados
+              formHomeScreen(context),
+              Categories(),
+              tituloBody(),
+              listViewCards(),
+              CategoriesPopular(),
+              ListViewCardPopular(),
+            ],
+          ),
+        ),
       ),
     );
   }

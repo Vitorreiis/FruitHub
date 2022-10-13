@@ -9,6 +9,7 @@
 *
 */
 
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fruithub/abstract/colors_app.dart';
 import 'package:fruithub/abstract/images_app.dart';
 import 'package:fruithub/components/mont_Elevated_Button.dart';
@@ -33,7 +34,8 @@ class WelcomeScreen extends StatelessWidget {
               height: MediaQuery.of(context).size.height * .6,
               width: MediaQuery.of(context).size.width,
               color: ColorsApp().primaryColor,
-              child: montImage(imagesApp().imageCestaFrutas)),
+              child: montImage(imagesApp().imageCestaFrutas)
+        ),
           //Criando container para armazenar o texto e o botão que irão passar para página Authentication
           Container(
             height: MediaQuery.of(context).size.height * .4,
@@ -71,10 +73,7 @@ class WelcomeScreen extends StatelessWidget {
 Widget montImage(String image) {
   return Padding(
     padding: EdgeInsets.only(bottom: 34),
-    child: Image.asset(
-      image,
-      alignment: Alignment.bottomCenter,
-    ),
+    child: Image.asset(image),
   );
 }
 
