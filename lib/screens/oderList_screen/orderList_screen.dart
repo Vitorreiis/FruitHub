@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fruithub/abstract/colors_app.dart';
 import 'package:fruithub/components/item_cards.dart';
+import 'package:fruithub/models/Product.dart';
 import 'package:fruithub/screens/orderComplete_screen/orderComplete_screen.dart';
 import '../../components/mont_Elevated_Button.dart';
 
@@ -12,12 +13,15 @@ class OrderList extends StatefulWidget {
 
 class _HomeState extends State<OrderList> {
   var soma = 0.0;
-  var diminuir = 0.0;
 
   /// Launching the app and loading the information contained in the data
   @override
   void initState() {
     super.initState();
+    List.generate(ItemCard.listCart.length, (index) {
+      soma += ItemCard.listCart[index].value;
+    });
+
   }
 
   /// Home Screen
@@ -73,85 +77,90 @@ class _HomeState extends State<OrderList> {
   Widget buildItem(BuildContext context) {
     return Column(
       children: [
-        ...List.generate(ItemCard.listCart.length, (index) {
-          soma += ItemCard.listCart[index].value;
-          diminuir += ItemCard.listCart[index].value;
-          return Padding(
-            padding: EdgeInsets.only(left: 24, right: 24, bottom: 32),
-            child: Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(right: 16),
-                  alignment: Alignment.center,
-                  height: 100,
-                  width: 100,
-                  color: ColorsApp().colorBackGroundItem,
-                  child: Container(
-                    margin: EdgeInsets.only(right: 16),
-                    color: Colors.white,
-                    height: 50,
-                    width: 50,
-                    child: Image.asset(
-                      ItemCard.listCart[index].image,
-                      height: 20,
-                      width: 20,
-                    ),
-                  ),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      ItemCard.listCart[index].name,
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
+        SingleChildScrollView(
+          child: Column(
+            children: [
+              ...List.generate(ItemCard.listCart.length, (index) {
+                return Padding(
+                  padding: EdgeInsets.only(left: 24, right: 24, bottom: 32),
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: 16),
+                        alignment: Alignment.center,
+                        height: 100,
+                        width: 100,
+                        color: ColorsApp().colorBackGroundItem,
+                        child: Container(
+                          margin: EdgeInsets.only(right: 16),
+                          color: Colors.white,
+                          height: 50,
+                          width: 50,
+                          child: Image.asset(
+                            ItemCard.listCart[index].image,
+                            height: 20,
+                            width: 20,
+                          ),
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    Text(
-                      'Valor',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w300,
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            ItemCard.listCart[index].name,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 2,
+                          ),
+                          Text(
+                            'Valor',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 2,
+                          ),
+                          Text(
+                            ItemCard.listCart[index].value.toStringAsFixed(3),
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    Text(
-                      ItemCard.listCart[index].value.toStringAsFixed(3),
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
+                      Spacer(),
+                      Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: ColorsApp().colorBackaAdicionarRemover,
+                        ),
+                        child: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              soma -= ItemCard.listCart[index].value;
+                              ItemCard.listCart.removeAt(index);
+                            });
+                          },
+                          icon: Icon(
+                            Icons.remove,
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                Spacer(),
-                Container(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: ColorsApp().colorBackaAdicionarRemover,
+                    ],
                   ),
-                  child: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        ItemCard.listCart.removeAt(index);
-                      });
-                    },
-                    icon: Icon(
-                      Icons.remove,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          );
-        }),
+                );
+              }),
+            ],
+          ),
+        ),
         Spacer(),
         Container(
           margin: EdgeInsets.only(bottom: 49),
@@ -178,7 +187,7 @@ class _HomeState extends State<OrderList> {
                 }),
               )
             ],
-          ),
+         ),
         ),
       ],
     );

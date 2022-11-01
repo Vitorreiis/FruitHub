@@ -124,6 +124,12 @@ class _RowQuantState extends State<RowQuant> {
   int quantidade = 1;
   double total = 0;
 
+  @override
+  void initState() {
+    super.initState();
+    total = widget.product.price;
+  }
+
   Widget build(BuildContext context) {
     return Row(
       children: [
@@ -131,10 +137,13 @@ class _RowQuantState extends State<RowQuant> {
           margin: EdgeInsets.only(left: 24),
           width: 40,
           height: 40,
-          child: IconButton(onPressed: () {
+          child: IconButton(
+              onPressed: () {
             setState(() {
-              total -= widget.product.price;
-              quantidade--;
+              if(total != 0) {
+                total -= widget.product.price;
+                quantidade--;
+              }
             });
           }, icon: Icon(Icons.remove)),
           decoration: BoxDecoration(
